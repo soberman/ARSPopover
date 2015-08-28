@@ -63,7 +63,7 @@
     popoverController.sourceView = self.buttonWithWebView;
     popoverController.sourceRect = CGRectMake(CGRectGetMidX(self.buttonWithWebView.bounds), CGRectGetMaxY(self.buttonWithWebView.bounds), 0, 0);
     popoverController.contentSize = CGSizeMake(400, 600);
-//    popoverController.arrowDirection = UIPopoverArrowDirectionUp;
+    popoverController.arrowDirection = UIPopoverArrowDirectionUp;
     
     [popoverController insertContentIntoPopover:^(ARSPopover *popover) {
         UIWebView *webView = [[UIWebView alloc] initWithFrame:popoverController.view.frame];

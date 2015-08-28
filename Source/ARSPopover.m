@@ -29,18 +29,14 @@
     return self;
 }
 
-#pragma mark - View Controller's Life Cycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-//     You can add content to popover here.
-}
-
 #pragma mark - Actions
 
 - (void)closePopover {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)insertContentIntoPopover:(void (^)(ARSPopover *popover))content {
+    content(self);
 }
 
 #pragma mark - Popover Presentation Controller Delegate
