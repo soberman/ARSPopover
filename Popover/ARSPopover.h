@@ -31,4 +31,31 @@
 ///The margins that define the portion of the screen in which it is permissible to display the popover.
 @property (nonatomic, assign) UIEdgeInsets popoverLayoutMargins;
 
+/*!
+ Use this method to put your custom views into popover.
+ @param content Use this block to supply your custom elements, that will be shown inside popover element.
+ @param popover Reference to ARSPopover, so you could add element to it's subview.
+ 
+ @code
+ [popoverController insertContentIntoPopover:^(ARSPopover *popover) {
+     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     [button setTitle:@"Works?" forState:UIControlStateNormal];
+     [button sizeToFit];
+     [button setCenter:CGPointMake(50, 25)];
+     [button addTarget:popover 
+                action:@selector(closePopover) 
+      forControlEvents:UIControlEventTouchUpInside];
+     
+     [popover.view addSubview:button];
+ }];
+ @endcode
+ 
+ */
+- (void)insertContentIntoPopover:(void (^)(ARSPopover *popover))content;
+
+/*!
+ Helpers method, invoking wich will close the popover.
+ */
+- (void)closePopover;
+
 @end

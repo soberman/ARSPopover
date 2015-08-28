@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -16,28 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Hhx-Am-Y9j">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72T-gg-cQU">
-                                <rect key="frame" x="223" y="285" width="154" height="30"/>
-                                <state key="normal" title="Show me my popover!">
+                                <rect key="frame" x="234" y="28" width="132" height="30"/>
+                                <state key="normal" title="Embeded UIButton">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="showPopover:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YvF-n0-gQC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-j5-lYb">
+                                <rect key="frame" x="226" y="128" width="148" height="30"/>
+                                <state key="normal" title="Embeded UIWebView">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPopoverWithWebView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="W29-pA-RBj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Hhx-Am-Y9j" secondAttribute="trailing" id="3iH-lg-BRb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Hhx-Am-Y9j" secondAttribute="bottom" id="7I3-10-OrO"/>
                             <constraint firstAttribute="centerX" secondItem="72T-gg-cQU" secondAttribute="centerX" id="CMO-0N-7xH"/>
-                            <constraint firstAttribute="centerY" secondItem="72T-gg-cQU" secondAttribute="centerY" id="Lnd-yo-bcz"/>
+                            <constraint firstItem="Hhx-Am-Y9j" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Duh-Mh-Sxg"/>
+                            <constraint firstAttribute="centerY" secondItem="72T-gg-cQU" secondAttribute="centerY" constant="257" id="Lnd-yo-bcz"/>
+                            <constraint firstItem="o8B-j5-lYb" firstAttribute="top" secondItem="72T-gg-cQU" secondAttribute="bottom" constant="70" id="PIv-ek-rwe"/>
+                            <constraint firstItem="Hhx-Am-Y9j" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="pNI-nF-nMX"/>
+                            <constraint firstAttribute="centerX" secondItem="o8B-j5-lYb" secondAttribute="centerX" id="qhY-0E-tAU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="72T-gg-cQU" id="50n-In-8jr"/>
+                        <outlet property="button" destination="72T-gg-cQU" id="AvZ-8G-KVn"/>
+                        <outlet property="buttonWithWebView" destination="o8B-j5-lYb" id="i2y-Ef-cL0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="375" height="666"/>
+    </resources>
 </document>
