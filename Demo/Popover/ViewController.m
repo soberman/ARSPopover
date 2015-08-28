@@ -39,7 +39,7 @@
 @implementation ViewController
 
 - (IBAction)showPopover:(id)sender {
-    ARSPopover *popoverController = [[ARSPopover alloc] init];
+    ARSPopover *popoverController = [ARSPopover new];
     popoverController.sourceView = self.button;
     popoverController.sourceRect = CGRectMake(CGRectGetMidX(self.button.bounds), CGRectGetMaxY(self.button.bounds), 0, 0);
     popoverController.contentSize = CGSizeMake(100, 50);
@@ -59,11 +59,11 @@
 }
 
 - (IBAction)showPopoverWithWebView:(id)sender {
-    ARSPopover *popoverController = [[ARSPopover alloc] init];
+    ARSPopover *popoverController = [ARSPopover new];
     popoverController.sourceView = self.buttonWithWebView;
     popoverController.sourceRect = CGRectMake(CGRectGetMidX(self.buttonWithWebView.bounds), CGRectGetMaxY(self.buttonWithWebView.bounds), 0, 0);
     popoverController.contentSize = CGSizeMake(400, 600);
-    popoverController.arrowDirection = UIPopoverArrowDirectionUp;
+//    popoverController.arrowDirection = UIPopoverArrowDirectionUp;
     
     [popoverController insertContentIntoPopover:^(ARSPopover *popover) {
         UIWebView *webView = [[UIWebView alloc] initWithFrame:popoverController.view.frame];

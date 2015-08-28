@@ -21,20 +21,13 @@
 #pragma mark Initialization
 
 - (instancetype)init {
-    if (self = [super init]) {
-        self.modalPresentationStyle = UIModalPresentationPopover;
-        self.popoverPresentationController.delegate = self;
-    }
+    self = [super init];
+    if (!self) return nil;
+        
+    self.modalPresentationStyle = UIModalPresentationPopover;
+    self.popoverPresentationController.delegate = self;
     
     return self;
-}
-
-#pragma mark - View Controller's Life Cycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-//     You can add content to popover here.
 }
 
 #pragma mark - Actions

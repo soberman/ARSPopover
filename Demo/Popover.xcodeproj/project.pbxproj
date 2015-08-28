@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27073C651B911C4E00867635 /* ARSPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 27073C641B911C4E00867635 /* ARSPopover.m */; };
 		273102581B15F443007D2629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 273102571B15F443007D2629 /* main.m */; };
 		2731025B1B15F443007D2629 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2731025A1B15F443007D2629 /* AppDelegate.m */; };
 		2731025E1B15F443007D2629 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2731025D1B15F443007D2629 /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		273102631B15F443007D2629 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273102621B15F443007D2629 /* Images.xcassets */; };
 		273102661B15F443007D2629 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273102641B15F443007D2629 /* LaunchScreen.xib */; };
 		273102721B15F444007D2629 /* PopoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 273102711B15F444007D2629 /* PopoverTests.m */; };
-		2731027D1B15F4D7007D2629 /* ARSPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 2731027C1B15F4D7007D2629 /* ARSPopover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27073C631B911C4E00867635 /* ARSPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSPopover.h; path = ../../Source/ARSPopover.h; sourceTree = "<group>"; };
+		27073C641B911C4E00867635 /* ARSPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSPopover.m; path = ../../Source/ARSPopover.m; sourceTree = "<group>"; };
 		273102521B15F443007D2629 /* Popover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		273102561B15F443007D2629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273102571B15F443007D2629 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,8 +43,6 @@
 		2731026B1B15F444007D2629 /* PopoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		273102701B15F444007D2629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273102711B15F444007D2629 /* PopoverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopoverTests.m; sourceTree = "<group>"; };
-		2731027B1B15F4D7007D2629 /* ARSPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSPopover.h; sourceTree = "<group>"; };
-		2731027C1B15F4D7007D2629 /* ARSPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSPopover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +84,12 @@
 		273102541B15F443007D2629 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				27073C631B911C4E00867635 /* ARSPopover.h */,
+				27073C641B911C4E00867635 /* ARSPopover.m */,
 				273102591B15F443007D2629 /* AppDelegate.h */,
 				2731025A1B15F443007D2629 /* AppDelegate.m */,
 				2731025C1B15F443007D2629 /* ViewController.h */,
 				2731025D1B15F443007D2629 /* ViewController.m */,
-				2731027B1B15F4D7007D2629 /* ARSPopover.h */,
-				2731027C1B15F4D7007D2629 /* ARSPopover.m */,
 				2731025F1B15F443007D2629 /* Main.storyboard */,
 				273102621B15F443007D2629 /* Images.xcassets */,
 				273102641B15F443007D2629 /* LaunchScreen.xib */,
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2731027D1B15F4D7007D2629 /* ARSPopover.m in Sources */,
+				27073C651B911C4E00867635 /* ARSPopover.m in Sources */,
 				2731025E1B15F443007D2629 /* ViewController.m in Sources */,
 				2731025B1B15F443007D2629 /* AppDelegate.m in Sources */,
 				273102581B15F443007D2629 /* main.m in Sources */,
