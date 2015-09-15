@@ -69,8 +69,10 @@
         [popoverController insertContentIntoPopover:^(ARSPopover *popover, CGSize popoverPresentedSize, CGFloat popoverArrowHeight) {
             CGFloat originX = 0;
             CGFloat originY = 0;
+            CGFloat width = popoverPresentedSize.width;
+            CGFloat height = popoverPresentedSize.height - popoverArrowHeight;
             
-            CGRect frame = CGRectMake(originX, originY, popoverPresentedSize.width, popoverPresentedSize.height - popoverArrowHeight);
+            CGRect frame = CGRectMake(originX, originY, width, height);
             UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
             webView.scalesPageToFit = YES;
             [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]]];

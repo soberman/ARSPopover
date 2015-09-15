@@ -30,14 +30,20 @@ Sample usage of the ARSPopover might look like this:
     popoverController.contentSize = CGSizeMake(400, 600);
     popoverController.arrowDirection = UIPopoverArrowDirectionUp;
 
-    [popoverController insertContentIntoPopover:^(ARSPopover *popover) {
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:popoverController.view.frame];
-        webView.scalesPageToFit = YES;
-        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]]];
-        [popover.view addSubview:webView];
-    }];
+    [self presentViewController:popoverController animated:YES completion:^{
+        [popoverController insertContentIntoPopover:^(ARSPopover *popover, CGSize popoverPresentedSize, CGFloat popoverArrowHeight) {
+            CGFloat originX = 0;
+            CGFloat originY = 0;
+            CGFloat width = popoverPresentedSize.width;
+            CGFloat height = popoverPresentedSize.height - popoverArrowHeight;
 
-    [self presentViewController:popoverController animated:YES completion:nil];
+            CGRect frame = CGRectMake(originX, originY, width, height);
+            UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
+            webView.scalesPageToFit = YES;
+            [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]]];
+            [popover.view addSubview:webView];
+        }];
+    }];
 }
 ```
 ### Required properties' configurations
@@ -64,9 +70,17 @@ popoverController.contentSize = CGSizeMake(400, 600);
 
 * And the last, most important thing - you have to call method `insertContentIntoPopover` and pass a block of code, which should add subviews to popover's view you wish to see.
 
+_Be sure to call this method only after you have presented popup. Otherwise you might get wrong size in popoverPresentedSize._
+
 ``` objective-c
-[popoverController insertContentIntoPopover:^(ARSPopover *popover) {
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:popoverController.view.frame];
+[popoverController insertContentIntoPopover:^(ARSPopover *popover, CGSize popoverPresentedSize, CGFloat popoverArrowHeight) {
+    CGFloat originX = 0;
+    CGFloat originY = 0;
+    CGFloat width = popoverPresentedSize.width;
+    CGFloat height = popoverPresentedSize.height - popoverArrowHeight;
+
+    CGRect frame = CGRectMake(originX, originY, width, height);
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
     webView.scalesPageToFit = YES;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]]];
     [popover.view addSubview:webView];
