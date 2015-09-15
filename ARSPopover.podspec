@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ARSPopover"
-  s.version      = "2.2.0"
+  s.version      = "2.0.0"
   s.summary      = "Universal popover for iPhone and iPad."
 
   s.description  = <<-DESC
