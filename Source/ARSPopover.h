@@ -8,7 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol ARSPopoverDelegate <NSObject>
+
+@optional
+
+/*!
+ Popover notifies the delegate, that the popover needs to reposition it's location.
+ */
+- (void)popoverPresentationController:(UIPopoverPresentationController *)popoverPresentationController willRepositionPopoverToRect:(inout CGRect *)rect inView:(inout UIView *__autoreleasing *)view;
+
+/*!
+ Popover asks the delegate, whether it should dismiss itself.
+ */
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController;
+
+/*!
+ Popover notifies the delegate, that popover did dismiss itself.
+ */
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController;
+
+@end
+
+
 @interface ARSPopover : UIViewController
+
+/// Popover's delegate.
+@property (nonatomic, weak) id<ARSPopoverDelegate> delegate;
 
 /// Use this property to configure where popover's arrow should be pointing.
 @property (nonatomic, assign) UIPopoverArrowDirection arrowDirection;
@@ -35,6 +61,10 @@
  Use this method to put your custom views into popover.
  @param content Use this block to supply your custom elements, that will be shown inside popover element.
  @param popover Reference to ARSPopover, so you could add element to it's subview.
+ @param popoverPresentedSize Popover's size after it is being presented.
+ @param popoverArrowHeight Height of the arrow.
+ 
+ @warning Be sure to call insertContentIntoPopover: only after you have presented it, otherwise popoverPresentationSize frame might be of wrong size.
  
  @code
  [popoverController insertContentIntoPopover:^(ARSPopover *popover) {
@@ -51,7 +81,7 @@
  @endcode
  
  */
-- (void)insertContentIntoPopover:(void (^)(ARSPopover *popover))content;
+- (void)insertContentIntoPopover:(void (^)(ARSPopover *popover, CGSize popoverPresentedSize, CGFloat popoverArrowHeight))content;
 
 /*!
  Helpers method, invoking wich will close the popover.

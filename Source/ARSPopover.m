@@ -35,8 +35,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)insertContentIntoPopover:(void (^)(ARSPopover *popover))content {
-    content(self);
+- (void)insertContentIntoPopover:(void (^)(ARSPopover *popover, CGSize popoverPresentedSize, CGFloat presentationArrowHeight))content {
+    CGFloat presentationArrowHeight = 12.0;
+    CGFloat width = CGRectGetWidth(self.popoverPresentationController.frameOfPresentedViewInContainerView);
+    CGFloat height = CGRectGetHeight(self.popoverPresentationController.frameOfPresentedViewInContainerView);
+    CGSize popoverSize = CGSizeMake(width, height);
+    
+    content(self, popoverSize, presentationArrowHeight);
 }
 
 #pragma mark - Popover Presentation Controller Delegate
@@ -50,6 +55,26 @@
     popoverPresentationController.passthroughViews = self.passthroughViews;
     popoverPresentationController.backgroundColor = self.backgroundColor;
     popoverPresentationController.popoverLayoutMargins = self.popoverLayoutMargins;
+}
+
+- (void)popoverPresentationController:(UIPopoverPresentationController *)popoverPresentationController willRepositionPopoverToRect:(inout CGRect *)rect inView:(inout UIView *__autoreleasing *)view {
+    if ([self.delegate respondsToSelector:@selector(popoverPresentationController:willRepositionPopoverToRect:inView:)]) {
+        [self.delegate popoverPresentationController:popoverPresentationController willRepositionPopoverToRect:rect inView:view];
+    }
+}
+
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
+    if ([self.delegate respondsToSelector:@selector(popoverPresentationControllerShouldDismissPopover:)]) {
+        return [self.delegate popoverPresentationControllerShouldDismissPopover:popoverPresentationController];
+    }
+    
+    return YES;
+}
+
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
+    if ([self.delegate respondsToSelector:@selector(popoverPresentationControllerDidDismissPopover:)]) {
+        [self.delegate popoverPresentationControllerDidDismissPopover:popoverPresentationController];
+    }
 }
 
 #pragma mark - Adaptive Presentation Controller Delegate
