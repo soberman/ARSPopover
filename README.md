@@ -40,7 +40,7 @@ Sample usage of the ARSPopover might look like this:
             CGRect frame = CGRectMake(originX, originY, width, height);
             UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
             webView.scalesPageToFit = YES;
-            [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]]];
+            [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://google.com"]]];
             [popover.view addSubview:webView];
         }];
     }];
@@ -82,7 +82,7 @@ _Be sure to call this method only after you have presented popup. Otherwise you 
     CGRect frame = CGRectMake(originX, originY, width, height);
     UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
     webView.scalesPageToFit = YES;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://google.com"]]];
     [popover.view addSubview:webView];
 }];
 ```
