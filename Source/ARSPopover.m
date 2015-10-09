@@ -22,11 +22,31 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.modalPresentationStyle = UIModalPresentationPopover;
-        self.popoverPresentationController.delegate = self;
+        [self initializePopover];
     }
     
     return self;
+}
+
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self initializePopover];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    if (self = [super initWithCoder:coder]) {
+        [self initializePopover];
+    }
+    
+    return self;
+}
+
+- (void)initializePopover {
+    self.modalPresentationStyle = UIModalPresentationPopover;
+    self.popoverPresentationController.delegate = self;
 }
 
 #pragma mark - Actions
