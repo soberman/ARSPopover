@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ARSPopover"
-  s.version      = "2.0.0"
+  s.version      = "2.1.0"
   s.summary      = "Universal popover for iPhone and iPad."
 
   s.description  = <<-DESC
@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
   s.author             = { "Yarik Arsenkin" => "info@arsenkin.com" }
   s.social_media_url   = "http://twitter.com/Soberman777"
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/soberman/ARSPopover.git", :tag => "2.0.0" }
+  s.source       = { :git => "https://github.com/soberman/ARSPopover.git", :tag => "2.1.0" }
   s.source_files  = "Source/ARSPopover.{h,m}"
   s.exclude_files = "Demo/*"
   s.public_header_files = "Source/ARSPopover.h"
