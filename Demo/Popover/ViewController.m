@@ -4,6 +4,7 @@
 //
 //  Created by Yaroslav Arsenkin on 27.05.15.
 //  Copyright (c) 2015 Iaroslav Arsenkin.
+//  Website: http://arsenkin.com
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
