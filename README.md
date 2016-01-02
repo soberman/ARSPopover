@@ -13,7 +13,7 @@ Universal popover for iPhone and iPad that you can use in your projects. No cust
 ### CocoaPods
 To install with [CocoaPods](http://cocoapods.org/), copy and paste this in your *Podfile* file:
 
-    platform :ios, '8.0'
+    platform :ios, '8.3'
     pod 'ARSPopover', '~> 2.0'
 
 ### Non-CocoaPods way
