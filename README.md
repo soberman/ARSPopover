@@ -1,4 +1,4 @@
-# ARSPopover
+# ARSPopover ![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 Universal popover for iPhone and iPad that you can use in your projects. No custom drawing, no custom elements - everything is purely native.
 
 |           iPhone             |           iPad           |
